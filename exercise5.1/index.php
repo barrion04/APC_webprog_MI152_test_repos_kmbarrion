@@ -1,115 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
 include_once 'dbconfig.php';
-
-// delete condition
-if(isset($_GET['delete_id']))
+if(isset($_POST['btn-save']))
 {
- $sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
+ // variables for input data
+ $complete_name = $_POST['complete_name'];
+ $nickname = $_POST['nickname'];
+ $email = $_POST['email'];
+ $address = $_POST['address'];
+ $gender = $_POST['gender'];
+ $cellno = $_POST['cellno'];
+ $comment = $_POST['comment'];
+ // variables for input data
+ 
+ // sql query for inserting data into database
+ 
+        $sql_query = "INSERT INTO users(complete_name,nickname,email,address,gender,cellno,comment) 
+		VALUES('$complete_name','$nickname','$email','$address','$gender','$cellno','$comment')";
  mysqli_query($link, $sql_query);
- header("Location: $_SERVER[PHP_SELF]");
+        
+        // sql query for inserting data into database
+ 
 }
-// delete condition
-?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Database</title>
+<title>Viewers Information</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
-<style>
-div.container {
-    width: 99%;
-    height: 100%;
-    border: 10px solid black;
-}
-header, footer {
-    padding: 1em;
-    color: black;
-    background-color: black;
-    clear: left;
-    text-align: center;
-
-article {
-    margin-left: 170px;
-    border-left: 1px solid gray;
-    padding: 2em;
-    overflow: auto;
-	}
-
-</style>
-<script type="text/javascript">
-function edt_id(id)
-{
- if(confirm('Sure to edit ?'))
- {
-  window.location.href='edit_data.php?edit_id='+id;
- }
-}
-function delete_id(id)
-{
- if(confirm('Sure to Delete ?'))
- {
-  window.location.href='index.php?delete_id='+id;
- }
-}
-</script>
 </head>
+
+
 <body style="background-image: url(databasebac.jpg);width:100%">
 
+
 <center>
-<br>
-<br>
-<br>
-<br>
 
 <div id="header">
- <div id="content">
-    <label class="l">Database</label>
-    </div>
-</div>
 
+</div>
 <div id="body">
  <div id="content">
-    <table align="center" style="width:80%;">
+    <form method="post">
+    <table align="center">
     <tr>
-    <th colspan="9" style="background-color:white;"><a href="Mypage.php" target="_self">ADD DATA HERE.</a></th>
+    <td align="center" style="color:black;"> <a href="Mypage.php ">back to main page</a></td>
+    </tr> 
+    <tr>
+    <td><input type="text" name="complete_name" placeholder="Full Name" required /></td>
     </tr>
-
-    <th class="a">Complete Name</th>
-    <th class="a">Nickname</th>
-    <th class="a">Email Address</th>
-	<th class="a">Address</th>
-	<th class="a">Gender</th>
-	<th class="a">Cellphone Number</th>
-	<th class="a">Comment</th>
-    <th colspan="2" class="a">Operations</th>
+    <tr>
+    <td><input type="text" name="nickname" placeholder="Nickname" required /></td>
     </tr>
-	
-    <?php
- $sql_query="SELECT * FROM users";
- $result_set=mysqli_query($link, $sql_query);
- while($row=mysqli_fetch_row($result_set))
- {
-  ?>
-        <tr>
-        <td><?php echo $row[1]; ?></td>
-        <td><?php echo $row[2]; ?></td>
-        <td><?php echo $row[3]; ?></td>
-		<td><?php echo $row[4]; ?></td>
-		<td><?php echo $row[5]; ?></td>
-		<td><?php echo $row[6]; ?></td>
-		<td><?php echo $row[7]; ?></td>
-  <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="b_edit.png" align="EDIT" /></a></td>
-        <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="b_drop.png" align="DELETE" /></a></td>
-        </tr>
-        <?php
- }
- ?>
+    <tr>
+    <td><input type="text" name="email" placeholder="Email Address" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="address" placeholder="Home Address" required /></td>
+    </tr>
+	<tr>
+    <td>
+	<input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female">Female
+	<input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male">Male
+	</td>
+    </tr>
+	<tr>
+    <td><input type="text" name="cellno" placeholder="Cellphone Number" required /></td>
+    </tr>
+	 <td>Comment: <br>
+	 <textarea name="comment" rows="8" cols="140"></textarea>
+	 </td>
+    <tr>
+    <td><button type="submit" name="btn-save" style="color:white;"><strong>SAVE</strong></button></td>
+    </tr>
     </table>
+    </form>
     </div>
 </div>
 
 </center>
 </body>
-</html>
