@@ -78,7 +78,7 @@ th,td {line-height:5px;}
 
 <p id="demo6"></p>
 
-<button type="button" onclick="document.getElementById('demo5').innerHTML = 'studying '">Click Me!</button>
+<button type="button" onclick="document.getElementById('demo6').innerHTML = 'studying '">Click Me!</button>
 
 
 
