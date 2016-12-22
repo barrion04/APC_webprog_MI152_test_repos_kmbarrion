@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = 'Home';
 <img src="pictures\1.jpg" style="width:270px;height:270px;">
 <img src="pictures\2.jpg" style="width:270px;height:270px;">
 <img src="pictures\4.jpg" style="width:270px;height:270px;">
-<img src="pictures\3.jpg" style="width:270px;height:270px;">
+
 </div>
 
 <div class="body">
