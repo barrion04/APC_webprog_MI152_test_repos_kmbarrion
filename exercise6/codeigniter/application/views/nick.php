@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<title> Name </title>
+<title> Nickname </title>
 <style> 
 ul{padding:1px;overflow:hidden;list-style-type:none;margin:0;}
 li a{color:black;padding:10px;float:left;text-decoration:none;font-family:Lucida Handwriting;font-size:21px;}
