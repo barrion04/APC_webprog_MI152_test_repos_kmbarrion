@@ -72,6 +72,19 @@ th,td {line-height:5px;}
 <p id="demo5"></p>
 
 <button type="button" onclick="document.getElementById('demo5').innerHTML = 'Being Serious '">Click Me!</button>
+
+
+<h1>6.Things I spend most of the time</h1>
+
+<p id="demo6"></p>
+
+<button type="button" onclick="document.getElementById('demo5').innerHTML = 'studying '">Click Me!</button>
+
+
+
+
+
+
 </div>
 
 
