@@ -90,6 +90,12 @@ th,td {line-height:5px;}
 
 <p id="demo8"></p>
 
+<button type="button" onclick="document.getElementById('demo7').innerHTML = 'God and Parents '">Click Me!</button>
+
+<h1>8.Who's my hero?</h1>
+
+<p id="demo8"></p>
+
 <button type="button" onclick="document.getElementById('demo7').innerHTML = 'God '">Click Me!</button>
 
 
