@@ -105,7 +105,7 @@ table,th,td { border:3px solid black;}
  <div id="content">
 <table align="center">
     <tr>
-		<td align="center"><a href="<?php echo base_url();?>index.php/users/">back to main page</a></td>
+		<td align="center"><a href="<?php echo base_url();?>index.php/users/">Back to Main Page</a></td>
     </tr>
     <tr>
     <td><input type="text" name="complete_name" placeholder="Full Name" required /></td>
