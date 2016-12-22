@@ -19,7 +19,6 @@ th:hover,td:hover{opacity:0.7;color:black;background-color:white;}
 #twitter {position:absolute;margin-left:940px;margin-top:635px;}
 #insta {position:absolute;margin-left:980px;margin-top:635px;}
 
-.ts2 {position:absolute;margin-top:620px;background-color:brown;width:1250px;height:60px;z-index:-1;}
 </style>
 </head>
 
