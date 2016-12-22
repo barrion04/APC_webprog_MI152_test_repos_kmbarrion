@@ -80,6 +80,16 @@ th,td {line-height:5px;}
 
 <button type="button" onclick="document.getElementById('demo6').innerHTML = 'studying '">Click Me!</button>
 
+<h1>7.How old am I?</h1>
+
+<p id="demo7"></p>
+
+<button type="button" onclick="document.getElementById('demo7').innerHTML = '17 '">Click Me!</button>
+
+
+
+
+
 
 
 
